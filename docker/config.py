@@ -80,7 +80,7 @@ CSRF_COOKIE_SECURE = os.getenv('CSRF_COOKIE_SECURE', 'True') == 'True'
 #########################################
 ## EVENTS
 #########################################
-EVENTS_PUSH_BACKEND = "taiga.events.backends.rabbitmq.EventsPushBackend"
+EVENTS_PUSH_BACKEND = os.getenv("EVENTS_PUSH_BACKEND", "taiga.events.backends.rabbitmq.EventsPushBackend")
 EVENTS_PUSH_BACKEND_OPTIONS = {
     "url": f"amqp://{ os.getenv('RABBITMQ_USER') }:{ os.getenv('RABBITMQ_PASS') }@taiga-events-rabbitmq:5672/taiga"
 }
